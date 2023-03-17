@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+body, *{
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper-left-container {
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.wrapper-right-container {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-left{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #000;
+  border-radius: 12px;
+}
+
+.wrapper-right{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding-top: 12px;
+  /* padding-bottom: 24px; */
+}
+
+.wrap-team{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.team-name {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.border-left{
+  border-left: 1px solid #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrap-team ul {
+  list-style-type: none;
+}
+
+.wrap-team li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+button {
+  width: 100px;
+  height:50px;
+}
+
+.my-12 {
+  margin-top:12px;
+  margin-bottom: 12px;
+}
+
+.wrap-army {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.wrap-army:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
