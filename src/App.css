@@ -1,11 +1,19 @@
 body, *{
   box-sizing: border-box;
+  /* color: */
 }
 .container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: space-around;
+}
+
+.header {
+  text-align: center;
+  font-weight:700;
+  font-size: 40px;
+  margin-bottom: 32px;
 }
 
 .wrapper-left-container {
@@ -29,6 +37,7 @@ body, *{
   justify-content: space-around;
   border: 1px solid #000;
   border-radius: 12px;
+  background-color: #fff;
 }
 
 .wrapper-right{
@@ -96,4 +105,43 @@ button {
 .wrap-army:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+
+.loading {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap-score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.score-title {
+  font-size:32px;
+  font-weight: 600;
+  margin-right: 8;
+}
+
+.edit {
+  margin-left: 16;
+  cursor: pointer;
+}
+
+.edit-input {
+  margin-bottom: 32px;
+}
+
+.wrap-button {
+  display: flex;
+}
+
+.banner {
+  width: 400px;
+   height: 400px 
 }
