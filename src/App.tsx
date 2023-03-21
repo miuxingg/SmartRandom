@@ -2,11 +2,94 @@ import { Checkbox, CircularProgress, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import { Dialog } from "./components/Dialog";
+
+const LOCAL_STORAGE_KEY = "__aoe_army__";
 interface IArmy {
   name: string;
   score: number;
   isDisable?: boolean;
 }
+
+const AOEData: IArmy[] = [
+  {
+    score: 4,
+    name: "Shang",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Assyrian",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Egyptian",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Phoenician",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Palmyran",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Hittile",
+    isDisable: false,
+  },
+  {
+    score: 3,
+    name: "Yamato",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Minoan",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Roman",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Babylonian",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Persian",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Sumerian",
+    isDisable: false,
+  },
+  {
+    score: 2,
+    name: "Macedonia",
+  },
+  {
+    score: 1,
+    name: "Choson",
+  },
+  {
+    score: 1,
+    name: "Greek",
+  },
+  {
+    score: 1,
+    name: "Carthaginian",
+    isDisable: false,
+  },
+];
 
 const delay = (cb: Function) => {
   setTimeout(() => {
@@ -25,85 +108,17 @@ function App() {
   const [score, setScore] = useState({ team1: 0, team2: 0 });
   const [isDuplicate, setIsDuplicate] = useState<boolean>(true);
 
-  const [initData, setInitData] = useState<IArmy[]>([
-    {
-      score: 4,
-      name: "Shang",
-      isDisable: false,
-    },
-    {
-      score: 4,
-      name: "Assyrian",
-      isDisable: false,
-    },
-    {
-      score: 4,
-      name: "Egyptian",
-      isDisable: false,
-    },
-    {
-      score: 3,
-      name: "Phoenician",
-      isDisable: false,
-    },
-    {
-      score: 3,
-      name: "Palmyran",
-      isDisable: false,
-    },
-    {
-      score: 3,
-      name: "Hittile",
-      isDisable: false,
-    },
-    {
-      score: 3,
-      name: "Yamato",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Minoan",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Roman",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Babylonian",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Persian",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Sumerian",
-      isDisable: false,
-    },
-    {
-      score: 2,
-      name: "Macedonia",
-    },
-    {
-      score: 1,
-      name: "Choson",
-    },
-    {
-      score: 1,
-      name: "Greek",
-    },
-    {
-      score: 1,
-      name: "Carthaginian",
-      isDisable: false,
-    },
-  ]);
+  const [initData, setInitData] = useState<IArmy[]>([]);
+
+  useEffect(() => {
+    const getDataFromLocal = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (!getDataFromLocal) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(AOEData));
+      setInitData(AOEData);
+    } else {
+      setInitData(JSON.parse(getDataFromLocal));
+    }
+  }, []);
 
   // const initData: IArmy[] = [
   //   {
@@ -365,6 +380,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Dialog />
     </div>
   );
 }
