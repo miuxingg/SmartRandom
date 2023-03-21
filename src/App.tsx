@@ -2,7 +2,6 @@ import { Checkbox, CircularProgress, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
-import { Dialog } from "./components/Dialog";
 
 const LOCAL_STORAGE_KEY = "__aoe_army__";
 interface IArmy {
@@ -380,7 +379,6 @@ function App() {
           </div>
         </div>
       </div>
-      <Dialog />
     </div>
   );
 }
