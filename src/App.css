@@ -1,5 +1,8 @@
 body, *{
   box-sizing: border-box;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+
   /* color: */
 }
 .container {
